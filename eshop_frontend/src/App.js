@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import ProductGrid from './components/ProductGrid';
+import Footer from './components/Footer';
+import LoginModal from './components/LoginModal';
+import RegisterModal from './components/RegisterModal';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Navbar />
+      <div className="main_container">
+        <Sidebar />
+        <ProductGrid />
+      </div>
+      <Footer />
+      <LoginModal />
+      <RegisterModal />
     </div>
   );
 }
