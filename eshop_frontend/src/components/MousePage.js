@@ -2,110 +2,58 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/homepage.css';
 
+
 const MousePage = () => {
     return (
-        <div className="wrapper">
-            <div className="top_navbar">
-                <div className="hamburger">
-                    <div className="hamburger__inner">
-                        <span className="icon"><i className=" fas fa-regular fa-bars"></i></span>
-                    </div>
-                </div>
+    <div className="container">
+        <div className="main">
 
-                <div className="menu">
-                    <div className="logo">Categories</div>
-                    <marquee behavior="" direction="left">Sale news: Up to 50% off on selected items! ---- </marquee>
-                </div>
+            <div className ="item">
+                <h2>Mouse</h2>
+                <p>Computer mouse is a peripheral device used to control a cursor on a computer screen and perform operations on a graphical interface. 
+                    Regular mice are compactly designed, have two, three or more buttons with a scroll wheel placed between the two buttons.
+                </p>
             </div>
 
-            <div className="main_container">
-                <div className="sidebar">
-                    <div className="sidebar__inner">
-                        <ul>
-                            <li>
-                                <Link to="/computer">
-                                    <span className="icon"><i className=" fas fa-solid fa-laptop"></i></span>
-                                    <span className="title">Computer & Laptop</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/keyboard">
-                                    <span className="icon"><i className="fas fa-solid fa-keyboard"></i></span>
-                                    <span className="title">Keyboards</span>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/mouse" className="active">
-                                    <span className="icon"><i className="fas fa-solid fa-computer-mouse"></i></span>
-                                    <span className="title">Mouses</span>
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
+            <div className="product-grid">
+                <div className="product">
+                    <img src="1.jpg" alt="Product 1" />
+                    <p>Product 1</p>
+                    <p>$10.00</p>
                 </div>
 
-                <div className="container">
-                    <div className="main">
-                        <div className="product-grid">
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 1" />
-                                <p>Product 1</p>
-                                <p>$10.00</p>
-                            </div>
+                <div className="product">
+                    <img src="1.jpg" alt="Product 1" />
+                    <p>Product 1</p>
+                    <p>$10.00</p>
+                </div>
 
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 2" />
-                                <p>Product 2</p>
-                                <p>$20.00</p>
-                            </div>
+                <div className="product">
+                    <img src="1.jpg" alt="Product 1" />
+                    <p>Product 1</p>
+                    <p>$10.00</p>
+                </div>
 
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 3" />
-                                <p>Product 3</p>
-                                <p>$30.00</p>
-                            </div>
+                <div className="product">
+                    <img src="1.jpg" alt="Product 1" />
+                    <p>Product 1</p>
+                    <p>$10.00</p>
+                </div>
 
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 1" />
-                                <p>Product 1</p>
-                                <p>$10.00</p>
-                            </div>
+                <div className="product">
+                    <img src="1.jpg" alt="Product 1" />
+                    <p>Product 1</p>
+                    <p>$10.00</p>
+                </div>
 
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 2" />
-                                <p>Product 2</p>
-                                <p>$20.00</p>
-                            </div>
-
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 3" />
-                                <p>Product 3</p>
-                                <p>$30.00</p>
-                            </div>
-
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 1" />
-                                <p>Product 1</p>
-                                <p>$10.00</p>
-                            </div>
-
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 2" />
-                                <p>Product 2</p>
-                                <p>$20.00</p>
-                            </div>
-
-                            <div className="product">
-                                <img src="1.jpg" alt="Product 3" />
-                                <p>Product 3</p>
-                                <p>$30.00</p>
-                            </div>
-                        </div>
-                    </div>
+                <div className="product">
+                    <img src="1.jpg" alt="Product 1" />
+                    <p>Product 1</p>
+                    <p>$10.00</p>
                 </div>
             </div>
         </div>
-    );
-};
+    </div>    
+)};
 
 export default MousePage;

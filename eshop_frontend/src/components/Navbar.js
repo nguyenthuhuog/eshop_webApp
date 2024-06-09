@@ -1,4 +1,3 @@
-// Navbar.js
 import React, { useState } from 'react';
 import '../css/homepage.css';
 import Sidebar from './Sidebar';
@@ -24,9 +23,8 @@ const Navbar = () => {
         </div>
       </div>
 
+      <Sidebar isActive={isActive} />
       <div className="main_container">
-        <Sidebar />
-        {/* Your main content here */}
       </div>
     </div>
   );

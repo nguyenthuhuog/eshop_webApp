@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/homepage.css';
 
-const Sidebar = () => {
+const Sidebar = ({ isActive }) => {
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${isActive ? 'active' : ''}`}>
             <div className="sidebar__inner">
                 <ul>
                     <li>

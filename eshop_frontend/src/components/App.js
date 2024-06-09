@@ -6,9 +6,6 @@ import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
-// import Sidebar from './Sidebar';
-// import SaleNews from './SaleNews';
-// import ProductGrid from './ProductGrid';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 import MousePage from './MousePage';
@@ -37,21 +34,12 @@ function App() {
         <div className="main_container">
           <Routes>
             <Route path="/contact" element={<Contact />} />
-          </Routes>
-
-          <div class="sidebar__inner">
-            <Routes>
-              <Route path="/mouse" element={<MousePage />} />
-              <Route path="/computer" element={<ComputerPage />} />
-              <Route path="/keyboard" element={<KeyboardPage />} />
-            </Routes>
-          </div>
-
-          <Routes>
+            <Route path="/mouse" element={<MousePage />} />
+            <Route path="/computer" element={<ComputerPage />} />
+            <Route path="/keyboard" element={<KeyboardPage />} />
             <Route path="/homepage" element={<HomePage />} />
           </Routes>
         </div>
-          
         <Footer />
         <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
         <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
