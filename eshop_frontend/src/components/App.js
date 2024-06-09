@@ -49,7 +49,7 @@ function App() {
             <Route path="/computer" element={<ComputerPage />} />
             <Route path="/keyboard" element={<KeyboardPage />} />
             <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
-            <Route path="/product/:id" component={ProductDetail} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </div>
         <Footer />
