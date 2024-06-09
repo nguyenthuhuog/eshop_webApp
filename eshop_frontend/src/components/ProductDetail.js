@@ -9,6 +9,8 @@ const ProductDetail = () => {
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const [quantityError, setQuantityError] = useState(false);
+    const [comments, setComments] = useState([]);
+    const [newComment, setNewComment] = useState('');
     const api = `http://localhost:8080/api/products/${id}`;
     const imageApiBase = 'http://localhost:8080/api/images';
 
@@ -28,10 +30,18 @@ const ProductDetail = () => {
             }
         };
 
-        fetchProduct();
-    }, [id]);
+        const fetchComments = async () => {
+            try {
+                const response = await axios.get(`http://localhost:8080/api/comments/productID/${id}`);
+                setComments(response.data);
+            } catch (error) {
+                console.error('Error fetching comments:', error);
+            }
+        };
 
-    if (!product) return <div>Loading...</div>;
+        fetchProduct();
+        fetchComments();
+    }, [id]);
 
     const handleQuantityChange = (newQuantity) => {
         if (newQuantity >= 1 && newQuantity <= product.stock) {
@@ -42,33 +52,67 @@ const ProductDetail = () => {
         }
     };
 
+    const handleCommentSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8080/api/comments', {
+                productID: id,
+                content: newComment,
+            });
+            setComments([...comments, response.data]);
+            setNewComment('');
+        } catch (error) {
+            console.error('Error posting comment:', error);
+        }
+    };
+
+    if (!product) return <div>Loading...</div>;
+
     const productDetailsTitle = "Thông số sản phẩm";
     const productDetails = product.description.split(';').map((detail, index) => (
         <p key={index} className="product-details">{detail.trim()}</p>
     ));
 
     return (
-        <div className="product-detail-container">
-            <div className="product-image">
-                <img src={product.imageUrl} alt={product.productName} />
-            </div>
-            <div className="product-info">
-                <h2 className="product-name">{product.productName}</h2>
-                <p className="product-price">Price: ${product.price.toFixed(2)}</p>
-                <div>
-                    <p className="product-details-title">{productDetailsTitle}</p>
-                    {productDetails}
+        <div className="product-detail-page">
+            <div className="product-detail-container">
+                <div className="product-image">
+                    <img src={product.imageUrl} alt={product.productName} />
                 </div>
-                <p className="product-stock">Stock: {product.stock}</p>
-                <div className="cart-section">
-                    <div className="quantity-selector">
-                        <button onClick={() => handleQuantityChange(quantity - 1)} disabled={quantity <= 1}>-</button>
-                        <span>{quantity}</span>
-                        <button onClick={() => handleQuantityChange(quantity + 1)} disabled={quantity >= product.stock}>+</button>
+                <div className="product-info">
+                    <h2 className="product-name">{product.productName}</h2>
+                    <p className="product-price">Price: ${product.price.toFixed(2)}</p>
+                    <div>
+                        <p className="product-details-title">{productDetailsTitle}</p>
+                        {productDetails}
                     </div>
-                    <i className="fas fa-shopping-cart cart-icon"></i>
+                    <p className="product-stock">Stock: {product.stock}</p>
+                    <div className="cart-section">
+                        <div className="quantity-selector">
+                            <button onClick={() => handleQuantityChange(quantity - 1)} disabled={quantity <= 1}>-</button>
+                            <span>{quantity}</span>
+                            <button onClick={() => handleQuantityChange(quantity + 1)} disabled={quantity >= product.stock}>+</button>
+                        </div>
+                        <i className="fas fa-shopping-cart cart-icon"></i>
+                    </div>
+                    {quantityError && <p className="quantity-error">Cannot exceed available stock.</p>}
                 </div>
-                {quantityError && <p className="quantity-error">Cannot exceed available stock.</p>}
+            </div>
+            <div className="comments-section">
+                <h3>Comments</h3>
+                <ul>
+                    {comments.map((comment) => (
+                        <li key={comment.id}>{comment.content}</li>
+                    ))}
+                </ul>
+                <form onSubmit={handleCommentSubmit}>
+                    <textarea
+                        value={newComment}
+                        onChange={(e) => setNewComment(e.target.value)}
+                        placeholder="Write a comment..."
+                    ></textarea>
+                    <button type="submit">Submit</button>
+                </form>
             </div>
         </div>
     );
