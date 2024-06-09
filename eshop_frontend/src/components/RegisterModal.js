@@ -1,5 +1,5 @@
 import React from 'react';
-import './homepage.css';
+import '../css/homepage.css';
 
 const RegisterModal = ({ show, onClose }) => {
   if (!show) {
