@@ -13,6 +13,7 @@ import MousePage from './MousePage';
 import KeyboardPage from './KeyboardPage';
 import ComputerPage from './ComputerPage';
 import HomePage from './HomePage';
+import ProductDetail from './ProductDetail';
 
 import ProductGrid from './ProductGrid'; // Import ProductGrid
 import { ShopProvider } from './ShopContext';
@@ -53,8 +54,12 @@ function App() {
             <Route path="/computer" element={<ComputerPage />} />
             <Route path="/keyboard" element={<KeyboardPage />} />
             <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
+<<<<<<< HEAD
             <Route path="/shop" element={<Shop />} />
             <Route path="/products" element={<ProductGrid />} /> {/* Add route for ProductGrid */} 
+=======
+            <Route path="/product/:id" component={ProductDetail} />
+>>>>>>> 999c1706d1e7859b1b5fef411239748f4f2bb130
           </Routes>
         </div>
         <Footer />
