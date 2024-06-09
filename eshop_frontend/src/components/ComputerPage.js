@@ -1,46 +1,20 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ProductGrid from './ProductGrid';
+import { PRODUCTS } from './products'; // Import the PRODUCTS array
+import { Product } from './Product';
 import '../css/homepage.css';
 import '../css/product.css';
 
-const products = [
-  {
-    id: 1,
-    name: 'Product 1',
-    price: 10.00,
-    description: 'Description for product 1',
-    stock: 20,
-    images: [{ url: '1.jpg' }]
-  },
-  {
-    id: 2,
-    name: 'Product 2',
-    price: 20.00,
-    description: 'Description for product 2',
-    stock: 30,
-    images: [{ url: '1.jpg' }]
-  },
-  {
-    id: 3,
-    name: 'Product 3',
-    price: 30.00,
-    description: 'Description for product 3',
-    stock: 40,
-    images: [{ url: '1.jpg' }]
-  },
-];
+// const ComputerPage = (props) => {
+//   const [cartItems, setCartItems] = useState({});
 
-const ComputerPage = (props) => {
-  const [cartItems, setCartItems] = useState({});
+//   const addToCart = (product) => {
+//     setCartItems(prevItems => ({
+//       ...prevItems,
+//       [product.id]: (prevItems[product.id] || 0) + 1
+//     }));
+//   };
 
-  const addToCart = (product) => {
-    setCartItems(prevItems => ({
-      ...prevItems,
-      [product.id]: (prevItems[product.id] || 0) + 1
-    }));
-  };
-
+const ComputerPage = () =>{
   return (
     <div className="container">
       <div className="main">
@@ -53,19 +27,8 @@ const ComputerPage = (props) => {
         </div>
 
         <div className="product-grid">
-          {products.map((product) => (
-            <div className="product" key={product.id}>
-              <h3>{product.name}</h3>
-              {product.images.map((image, index) => (
-                <img src={image.url} alt={`Image of ${product.name}`} key={index} />
-              ))}
-              <p>Price: ${product.price.toFixed(2)}</p>
-              <p>Description: {product.description}</p>
-              <p>Stock: {product.stock}</p>
-              <button className="btn-addToCart" onClick={() => addToCart(product)}>
-                Add to cart {cartItems[product.id] > 0 && <> ({cartItems[product.id]})</>}
-              </button>
-            </div>
+          {PRODUCTS.map((product) => (
+            <Product data ={product} />
           ))}
         </div>
       </div>

@@ -51,7 +51,6 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
                     <Link to ="/cart">
                         <button>
                             <i className="fas fa-shopping-cart"></i>
-                            {/* <ShoppingCart size={32} /> */}
                         </button>
                     </Link>
                     

@@ -1,17 +1,17 @@
-import React, { createContext, useState, useEffect } from 'react';
-import { PRODUCTS } from './products';
+import { createContext, useEffect, useState } from "react";
+import { PRODUCTS } from "./products";
 
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
   let cart = {};
-  for (let i = 1; i <= PRODUCTS.length; i++) {
+  for (let i = 1; i < PRODUCTS.length + 1; i++) {
     cart[i] = 0;
   }
   return cart;
 };
 
-export const ShopContextProvider = ({ children }) => {
+export const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   const getTotalCartAmount = () => {
@@ -30,16 +30,7 @@ export const ShopContextProvider = ({ children }) => {
   };
 
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => {
-      const newCartItems = { ...prev };
-      if (newCartItems[itemId] > 0) {
-        newCartItems[itemId] -= 1;
-        if (newCartItems[itemId] === 0) {
-          delete newCartItems[itemId];
-        }
-      }
-      return newCartItems;
-    });
+    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
   };
 
   const updateCartItemCount = (newAmount, itemId) => {
@@ -61,7 +52,7 @@ export const ShopContextProvider = ({ children }) => {
 
   return (
     <ShopContext.Provider value={contextValue}>
-      {children}
+      {props.children}
     </ShopContext.Provider>
   );
 };
