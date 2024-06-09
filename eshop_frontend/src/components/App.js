@@ -7,7 +7,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+// import Sidebar from './Sidebar';
 import SaleNews from './SaleNews';
 import ProductGrid from './ProductGrid';
 import LoginModal from './LoginModal';
@@ -36,9 +36,9 @@ function App() {
         <Navbar />
         <div className="main_container">
           {/* <Sidebar /> */}
+          <Routes><Route path="/contact" element={<Contact />} /> </Routes> 
           <div class="sidebar__inner">
             <Routes>
-              <Route path="/contact" element={<Contact />} />
               <Route path="/mouse" element={<MousePage />} />
               <Route path="/computer" element={<ComputerPage />} />
               <Route path="/keyboard" element={<KeyboardPage />} />
