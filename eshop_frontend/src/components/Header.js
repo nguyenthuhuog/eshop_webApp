@@ -49,7 +49,7 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
                     </button>
 
                     <Link to ="/cart">
-                        <button>
+                        <button className="btn-cart">
                             <i className="fas fa-shopping-cart"></i>
                         </button>
                     </Link>

@@ -17,7 +17,8 @@ import ProductDetail from './ProductDetail';
 import ProductGrid from './ProductGrid'; // Import ProductGrid
 import {ShopContextProvider} from './ShopContextProvider';
 // import Shop from './Shop';
-import Cart from './Cart'; // Import Cart
+import Cart from './Cart'; 
+import Checkout from './Checkout';
 
 
 import '../css/homepage.css';
@@ -56,8 +57,9 @@ function App() {
                   <Route path="/keyboard" element={<KeyboardPage />} />
                   <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
                   <Route path="/products" element={<ProductGrid />} /> 
-                  <Route path="/cart" element={<Cart />} />      
-                  <Route path="/product/:id" element={<ProductDetail />} />            
+                  <Route path="/cart" element={<Cart />} />  
+                  <Route path="/checkout" element={<Checkout/>} />                           
+                  <Route path="/product/:id" element={<ProductDetail />} /> 
                 </Routes>
               </div>
               <Footer />
