@@ -8,7 +8,7 @@ const ProductGrid = ({ categoryName }) => {
   var api = 'http://localhost:8080/api/products';
   var imageApiBase = 'http://localhost:8080/api/images';
   const [products, setProducts] = useState([]);
-  const { addToCart, cartItems } = useContext(ShopContext); // Use ShopContext
+  const { addToCart, cartItems } = useContext(ShopContext);
   const navigate = useNavigate();
 
   const fetchProducts = async () => {
@@ -17,7 +17,6 @@ const ProductGrid = ({ categoryName }) => {
         const response = await axios.get(api);
         const fetchedProducts = response.data;
       
-        // Fetch images for each product
         const productsWithImages = await Promise.all(
           fetchedProducts.map(async (product) => {
             try {
@@ -25,7 +24,7 @@ const ProductGrid = ({ categoryName }) => {
               return { ...product, imageUrl: imageResponse.data.image_url };
             } catch (error) {
               console.error(`Error fetching image for productID ${product.productID}:`, error);
-              return product; // Return product without image if error occurs
+              return product;
             }
           })
         );
@@ -40,6 +39,11 @@ const ProductGrid = ({ categoryName }) => {
     navigate(`/product/${productId}`);
   };
 
+  const handleAddToCart = (e, product) => {
+    e.stopPropagation(); // Stop the event from propagating to parent elements
+    addToCart(product);
+  };
+
   useEffect(() => {
     console.log("Start fetching");
     fetchProducts();
@@ -52,14 +56,10 @@ const ProductGrid = ({ categoryName }) => {
         {products.map((product) => (
           <div className="product" key={product.productID} onClick={() => handleProductClick(product.productID)}>
             <h3>{product.productName}</h3>
-            {/* Assuming product.images is an array */}
-            {/* {product.images.map((image, index) => (
-              <img src={image.url} alt={`Image of ${product.name}`} key={index} />
-            ))} */}
+            <img src={product.imageUrl} alt={`Image of ${product.productName}`} />
             <p>Price: ${product.price.toFixed(2)}</p>
-            {/* <p>Description: {product.description}</p> */}
             <p>Stock: {product.stock}</p>
-            <button className="btn-addToCart" onClick={() => addToCart(product)}>
+            <button className="btn-addToCart" onClick={(e) => handleAddToCart(e, product)}>
               Add to cart {cartItems[product.productID] > 0 && <> ({cartItems[product.productID]})</>}
             </button>
           </div>
