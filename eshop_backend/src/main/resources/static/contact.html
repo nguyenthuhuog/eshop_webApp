@@ -217,7 +217,7 @@
 
                 // Lấy dữ liệu từ form
                 const formData = new FormData(form);
-
+       
                 // Gửi dữ liệu đến server bằng fetch API
                 fetch(form.action, {
                     method: form.method,
@@ -232,6 +232,7 @@
                     } else {
                         // Xử lý lỗi nếu có
                         alert("Có lỗi xảy ra. Vui lòng thử lại.");
+                        console.error("Error:", error);
                     }
                 }).catch(error => {
                     // Xử lý lỗi nếu có
