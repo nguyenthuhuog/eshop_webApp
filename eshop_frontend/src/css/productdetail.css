@@ -1,41 +1,58 @@
-/* productdetail.css */
-
 .product-detail-container {
     display: flex;
-    justify-content: space-between;
-    background-color: #fff; /* Set background color for the detail container */
+    flex-direction: row;
     padding: 20px;
+    background-color: #fdfdfd;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 160px auto 20px; 
+    margin-left: 250px; 
+    transition: margin-left 0.3s ease; 
 }
 
+.wrapper.active .product-detail-container {
+    margin-left: 105px;  
+}
+
+/* Các phần còn lại của CSS không thay đổi */
 .product-image {
-    flex: 0 0 40%; /* Set the width of the product image */
+    flex: 1;
+    margin-right: 20px;
 }
 
 .product-image img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
     border-radius: 8px;
 }
 
 .product-info {
-    flex: 0 0 60%; /* Set the width of the product information */
-    padding-left: 20px; /* Add spacing between image and info */
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.product-info h2 {
-    font-size: 24px; /* Increase font size for product name */
+.product-name {
+    font-size: 2em;
     margin-bottom: 10px;
+    color: #333;
 }
 
-.product-info p {
-    font-size: 16px; /* Set font size for other product details */
-    margin-bottom: 10px;
-    line-height: 1.5; /* Improve line height for readability */
+.product-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
 }
 
-.product-info .product-price {
-    color: #e60023; /* Customize color for price */
-    font-weight: bold; /* Make price bold */
+.product-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 20px;
+}
+
+.product-stock {
+    font-size: 1.2em;
+    color: #666;
 }

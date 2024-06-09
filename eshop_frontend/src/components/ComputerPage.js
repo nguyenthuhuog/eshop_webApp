@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ProductGrid from './ProductGrid';
 import '../css/homepage.css';
 import '../css/product.css';
 
