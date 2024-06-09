@@ -193,7 +193,7 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('loginModal')">&times;</span>
-                <form>
+                <form th:action="@{/home}" method="post">
                     <label for="username">Username</label>
                     <input type="text"id="username" name="username">
                     <label for="password">Password</label>

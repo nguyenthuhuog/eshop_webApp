@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
  
 @Configuration
 public class WebSecurityConfig {
@@ -38,11 +39,17 @@ public class WebSecurityConfig {
                 .anyRequest().permitAll()
                 // .anyRequest().authenticated()
             )
-            .formLogin(login -> login.permitAll())
+            .formLogin(login -> login
+                .loginPage("/login") // Specify the custom login page URL
+                .successHandler(new SavedRequestAwareAuthenticationSuccessHandler()) // Redirect to the saved request URL on successful login
+                .permitAll()
+            )
             .logout(logout -> logout.permitAll())
-            .exceptionHandling(eh -> eh.accessDeniedPage("/403"))
-            ;
+            .exceptionHandling(eh -> eh
+                .accessDeniedPage("/403")
+                );
          
         return http.build();
     }
+    
 }
