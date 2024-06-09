@@ -49,7 +49,7 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
                     </button>
 
                     <Link to ="/cart">
-                        <button className="btn-cart" onClick={() => window.location.href = '#cart'}>
+                        <button>
                             <i className="fas fa-shopping-cart"></i>
                             {/* <ShoppingCart size={32} /> */}
                         </button>

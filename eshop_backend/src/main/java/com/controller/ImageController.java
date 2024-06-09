@@ -23,6 +23,11 @@ public class ImageController {
     public Image getImageById(@PathVariable int id) {
         return imageRepository.findById(id).orElse(null);
     }
+    
+    @GetMapping("/productID/{productID}")
+    public Image getOneImageByProductId(@PathVariable int productID) {
+        return imageRepository.findByProductId(productID).orElse(null);
+    }
 
     @PostMapping
     public Image createImage(@RequestBody Image image) {

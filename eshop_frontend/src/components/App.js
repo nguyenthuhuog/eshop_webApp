@@ -13,11 +13,12 @@ import MousePage from './MousePage';
 import KeyboardPage from './KeyboardPage';
 import ComputerPage from './ComputerPage';
 import HomePage from './HomePage';
-import ProductDetail from './ProductDetail';
 
 import ProductGrid from './ProductGrid'; // Import ProductGrid
-import { ShopProvider } from './ShopContext';
-import Shop from './Shop';
+import {ShopContextProvider} from './ShopContextProvider';
+// import Shop from './Shop';
+import Cart from './Cart'; // Import Cart
+
 
 import '../css/homepage.css';
 import '../css/App.css';
@@ -39,34 +40,34 @@ function App() {
   };
 
   return (
-    <ShopProvider>
-    <Router>
-      <div className="App">
-        <Header openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
-        <div className={`wrapper ${isSidebarActive ? 'active' : ''}`}>
-        <Navbar toggleSidebar={toggleSidebar}/>
-        <div className="main_container">
-          <Sidebar />
-          <div className="content">
-          <Routes>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/mouse" element={<MousePage />} />
-            <Route path="/computer" element={<ComputerPage />} />
-            <Route path="/keyboard" element={<KeyboardPage />} />
-            <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/products" element={<ProductGrid />} /> {/* Add route for ProductGrid */} 
-            <Route path="/product/:id" element={<ProductDetail />} />
-          </Routes>
+    <ShopContextProvider>
+      <Router>
+        <div className="App">
+          <Header openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
+          <div className={`wrapper ${isSidebarActive ? 'active' : ''}`}>
+            <Navbar toggleSidebar={toggleSidebar}/>
+            <div className="main_container">
+              <Sidebar />
+              <div className="content">
+                <Routes>
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/mouse" element={<MousePage />} />
+                  <Route path="/computer" element={<ComputerPage />} />
+                  <Route path="/keyboard" element={<KeyboardPage />} />
+                  <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
+                  <Route path="/products" element={<ProductGrid />} /> 
+                  <Route path="/cart" element={<Cart />} />               
+                </Routes>
+              </div>
+              <Footer />
+            </div>
+          </div>
+          
+          <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
+          <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
         </div>
-        <Footer />
-        </div>
-        </div>
-        <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
-        <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
-      </div>
-    </Router>
-    </ShopProvider>
+      </Router>
+    </ShopContextProvider>
   );
 }
 

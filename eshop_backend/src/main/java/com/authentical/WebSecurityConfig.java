@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
  
 @Configuration
 public class WebSecurityConfig {
@@ -33,11 +36,15 @@ public class WebSecurityConfig {
  
     @Bean
     SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/", "/home", "/signup", "/login").permitAll()
-                // .requestMatchers("/api/**").hasAnyAuthority("ADMIN", "USER")
-                .anyRequest().permitAll()
-                // .anyRequest().authenticated()
+        http.csrf((csrf) -> csrf.disable())
+            .cors(cors -> {
+                cors.configurationSource(corsConfigurationSource());
+            })
+            .authorizeHttpRequests(auth -> auth
+            .requestMatchers("/", "/home", "/signup", "/login").permitAll()
+            // .requestMatchers("/api/**").hasAnyAuthority("ADMIN", "USER")
+            .anyRequest().permitAll()
+            // .anyRequest().authenticated()
             )
             .formLogin(login -> login
                 .loginPage("/login") // Specify the custom login page URL
@@ -51,5 +58,16 @@ public class WebSecurityConfig {
          
         return http.build();
     }
-    
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.addAllowedOrigin("http://localhost:3000"); 
+        configuration.addAllowedMethod("*"); 
+        configuration.addAllowedHeader("*"); 
+        configuration.setAllowCredentials(true);
+        UrlBasedCorsConfigurationSource source = new 
+        UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
 }

@@ -10,7 +10,7 @@ const HomePage = ({ isSidebarActive }) => {
     <div className="main_container">
       <div className="container">
         <Banner />
-        <SaleNews />
+        <SaleNews /> 
         <ProductGrid />
         <News />
       </div>
