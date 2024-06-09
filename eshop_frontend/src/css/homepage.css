@@ -267,6 +267,13 @@ body{
     height: auto;
 }
 
+/* .main_container {
+    margin-top: 5px;
+    margin-left: 25px;
+    padding: 30px;
+    transition: all 0.3s ease;
+} */
+
 .main_container .container .banner {
     width: 100%;
     height: 600px;
@@ -280,19 +287,13 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 100px;
+    top: 5px;
     left: 0;
     transition: opacity 1s;
 }
 
 .main_container .container .banner img.hidden {
     opacity: 0;
-}
-
-/*side bar*/
-.wrapper{
-    width: 100%;
-    height: 100%;
 }
 
 .top_navbar{
@@ -311,16 +312,8 @@ body{
     position: relative;
     font-size: 28px;
 }
-
-.wrapper.active {
-    background-color: lightblue; /* For debugging purposes */
-}
   
-  /* .top_navbar .hamburger__inner {
-    cursor: pointer;
-  } */
-  
-.top_navbar .hamburger__inner{
+.top_navbar .hamburger .hamburger__inner{
     position: absolute;
     top: 35%;
     left: 55%;
@@ -346,7 +339,7 @@ body{
     letter-spacing: 2px;
 }
 
-.main_container .sidebar{
+.sidebar{
   position: fixed;
   top: 150px;
   left: 0;
@@ -357,11 +350,11 @@ body{
   z-index: 1;
 }
 
-.main_container .sidebar .sidebar__inner{
+.sidebar .sidebar__inner{
   position: relative;
 }
 
-.main_container .sidebar ul li a{
+.sidebar ul li a{
   color: #fff;
   font-size: 14px;
   padding: 20px 20px;
@@ -372,17 +365,17 @@ body{
   transition: all 0.3s ease;
 }
 
-.main_container .sidebar ul li a .icon{
+.sidebar ul li a .icon{
   margin-right: 15px;
   font-size: 28px;
 }
 
-.main_container .sidebar ul li a span{
+.sidebar ul li a span{
   display: inline-block;
 }
 
-.main_container .sidebar ul li a:hover,
-.main_container .sidebar ul li a.active{
+.sidebar ul li a:hover,
+.sidebar ul li a.active{
   background: #fff;
   color: #0f3249;
 }

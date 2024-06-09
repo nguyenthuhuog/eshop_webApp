@@ -35,7 +35,7 @@ function App() {
         <Header openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
         <Navbar />
         <div className="main_container">
-          <Sidebar />
+          {/* <Sidebar /> */}
           <div class="sidebar__inner">
             <Routes>
               <Route path="/contact" element={<Contact />} />
