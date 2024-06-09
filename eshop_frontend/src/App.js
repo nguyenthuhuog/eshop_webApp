@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import LoginModal from './components/LoginModal';
 import RegisterModal from './components/RegisterModal';
 import Contact from './components/Contact';
+import MousePage from './components/MousePage'; 
+import KeyboardPage from './components/KeyboardPage'; 
+import ComputerPage from './components/ComputerPage'; 
 
 function App() {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -30,6 +33,9 @@ function App() {
                     <Sidebar />
                     <Routes>
                         <Route path="/contact" element={<Contact />} />
+                        <Route path="/mouse" element={<MousePage />} />
+                        <Route path="/computer" element={<ComputerPage />} />
+                        <Route path="/keyboard" element={<KeyboardPage />} />
                         <Route path="/" element={<ProductGrid />} />
                     </Routes>
                 </div>
