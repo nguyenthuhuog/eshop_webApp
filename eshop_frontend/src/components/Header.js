@@ -7,7 +7,7 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
     return (
         <div id="header">
             <div className="logo">
-                <Link to="/"> <img src={logo} alt="Logo" /></Link>
+                <Link to="/homepage"> <img src={logo} alt="Logo" /></Link>
             </div>
 
             <div className="shop-name">H2T Computer Shop</div>

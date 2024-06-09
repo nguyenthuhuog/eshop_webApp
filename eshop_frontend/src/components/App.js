@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Banner from './Banner';
 import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
 // import Sidebar from './Sidebar';
-import SaleNews from './SaleNews';
-import ProductGrid from './ProductGrid';
+// import SaleNews from './SaleNews';
+// import ProductGrid from './ProductGrid';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 import MousePage from './MousePage';
 import KeyboardPage from './KeyboardPage';
 import ComputerPage from './ComputerPage';
+import HomePage from './HomePage';
 
 import '../css/homepage.css';
 import '../css/App.css';
@@ -35,8 +35,10 @@ function App() {
         <Header openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
         <Navbar />
         <div className="main_container">
-          {/* <Sidebar /> */}
-          <Routes><Route path="/contact" element={<Contact />} /> </Routes> 
+          <Routes>
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+
           <div class="sidebar__inner">
             <Routes>
               <Route path="/mouse" element={<MousePage />} />
@@ -45,16 +47,14 @@ function App() {
             </Routes>
           </div>
 
-          <div className="container">
-              <Banner />
-              <SaleNews />
-              <ProductGrid />
-              <SaleNews />
-          </div>
+          <Routes>
+            <Route path="/homepage" element={<HomePage />} />
+          </Routes>
         </div>
-          <Footer />
-          <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
-          <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
+          
+        <Footer />
+        <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
+        <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
       </div>
     </Router>
   );

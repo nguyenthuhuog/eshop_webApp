@@ -27,7 +27,7 @@ body{
     width: 100%;
     background-color: #F6F4EB;
     color: #4682A9;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: left;
     z-index: 1000;
     display: flex;
@@ -44,7 +44,7 @@ body{
 }
 
 #header .logo img {
-    height: 50px;  
+    height: 65px;  
 }
 
 #header .shop-name {
@@ -87,7 +87,7 @@ body{
 
 
 #header .auth-buttons {
-    margin-right: 50px;
+    margin-right: 10px;
     margin-left: 10px;
     padding: 5px;
     display: flex;
