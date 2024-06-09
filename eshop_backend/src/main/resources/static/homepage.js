@@ -1,21 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     var hamburgerInner = document.querySelector(".hamburger");
-    var profileIcon = document.querySelector(".top_navbar .fa-user");
-    var profileDropdown = document.querySelector(".profile_dd");
 
     if (hamburgerInner) {
         hamburgerInner.addEventListener("click", function() {
             var wrapper = document.querySelector(".wrapper");
             if (wrapper) {
                 wrapper.classList.toggle("active");
-            }
-        });
-    }
-
-    if (profileIcon) {
-        profileIcon.addEventListener("click", function() {
-            if (profileDropdown) {
-                profileDropdown.classList.toggle("active");
             }
         });
     }

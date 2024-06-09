@@ -312,7 +312,15 @@ body{
     font-size: 28px;
 }
 
-.top_navbar .hamburger .hamburger__inner{
+.wrapper.active {
+    background-color: lightblue; /* For debugging purposes */
+}
+  
+  /* .top_navbar .hamburger__inner {
+    cursor: pointer;
+  } */
+  
+.top_navbar .hamburger__inner{
     position: absolute;
     top: 35%;
     left: 55%;
