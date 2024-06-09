@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ProductGrid from './ProductGrid';
 import '../css/homepage.css';
 
 const ComputerPage = () => {
@@ -12,43 +13,8 @@ const ComputerPage = () => {
                                 It is designed for use in work, entertainment or study activities on the go without having to use a bulky desktop computer.
                     </p>
             </div>
-            <div className="product-grid">
-                <div className="product">
-                    <img src="1.jpg" alt="Product 1" />
-                    <p>Product 1</p>
-                    <p>$10.00</p>
-                </div>
-
-                <div className="product">
-                    <img src="1.jpg" alt="Product 1" />
-                    <p>Product 1</p>
-                    <p>$10.00</p>
-                </div>
-
-                <div className="product">
-                    <img src="1.jpg" alt="Product 1" />
-                    <p>Product 1</p>
-                    <p>$10.00</p>
-                </div>
-
-                <div className="product">
-                    <img src="1.jpg" alt="Product 1" />
-                    <p>Product 1</p>
-                    <p>$10.00</p>
-                </div>
-
-                <div className="product">
-                    <img src="1.jpg" alt="Product 1" />
-                    <p>Product 1</p>
-                    <p>$10.00</p>
-                </div>
-
-                <div className="product">
-                    <img src="1.jpg" alt="Product 1" />
-                    <p>Product 1</p>
-                    <p>$10.00</p>
-                </div>
-            </div>
+            
+            <ProductGrid categoryName = "laptop"/>
         </div>
     </div>    
 )};
