@@ -31,12 +31,9 @@ const ProductDetail = () => {
         };
 
         const fetchComments = async () => {
-            try {
-                const response = await axios.get(`http://localhost:8080/api/comments/productID/${id}`);
-                setComments(response.data);
-            } catch (error) {
-                console.error('Error fetching comments:', error);
-            }
+            // Lấy comment từ Local Storage
+            const storedComments = JSON.parse(localStorage.getItem(`comments-${id}`)) || [];
+            setComments(storedComments);
         };
 
         fetchProduct();
@@ -52,18 +49,18 @@ const ProductDetail = () => {
         }
     };
 
-    const handleCommentSubmit = async (e) => {
+    const handleCommentSubmit = (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8080/api/comments', {
-                productID: id,
-                content: newComment,
-            });
-            setComments([...comments, response.data]);
-            setNewComment('');
-        } catch (error) {
-            console.error('Error posting comment:', error);
-        }
+        const newCommentData = {
+            id: Date.now(),
+            content: newComment,
+        };
+        const updatedComments = [...comments, newCommentData];
+        setComments(updatedComments);
+        setNewComment('');
+
+        // Lưu comment vào Local Storage
+        localStorage.setItem(`comments-${id}`, JSON.stringify(updatedComments));
     };
 
     if (!product) return <div>Loading...</div>;
