@@ -224,7 +224,7 @@ body{
 } */
 
 #main {
-    margin-top: 60px;
+    /* margin-top: 60px; */
     margin-left: 220px;
     padding: 10px;
     flex: 1;
@@ -257,14 +257,23 @@ body{
 .product {
     background-color: #91C8E4;
     border: 1px solid #ddd;
-    padding: 10px 10px 10px 10px;
     width: calc(33.333% - 20px);
     box-sizing: border-box;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 10px;
+}
+
+.product p {
+    margin: 5px 0;
 }
 
 /* .main_container {

@@ -47,6 +47,7 @@ function App() {
 
           <div className="container">
               <Banner />
+              <SaleNews />
               <ProductGrid />
               <SaleNews />
           </div>
