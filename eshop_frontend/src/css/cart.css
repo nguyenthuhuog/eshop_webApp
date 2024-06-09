@@ -48,3 +48,51 @@ h2{
   margin: 10px;
   cursor: pointer;
 }
+.cart {
+  padding: 20px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cartItem img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cartItem .description {
+  flex: 1;
+}
+
+.cartItem .countHandler {
+  display: flex;
+  align-items: center;
+}
+
+.cartItem .countHandler button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.cartItem .countHandler input {
+  width: 40px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.totalAmount {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.totalAmount h2 {
+  margin: 0;
+}

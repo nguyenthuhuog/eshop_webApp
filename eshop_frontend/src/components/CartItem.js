@@ -15,15 +15,15 @@ export const CartItem = (props) => {
           </p>
           <p>Price: ${price.toFixed(2)}</p>
           <div className="countHandler">
-            <button onClick={() => removeFromCart(id)}> <i class="fa-solid fa-minus"></i> </button>
+            <button onClick={() => removeFromCart(id)}> <i className="fa-solid fa-minus"></i> </button>
             <input
               type="number"
               value={cartItems[id]}
               onChange={(e) => updateCartItemCount(Number(e.target.value), id)}
             />
-            <button onClick={() => addToCart(id)}> <i class="fa-solid fa-plus"></i> </button>
+            <button onClick={() => addToCart(id)}> <i className="fa-solid fa-plus"></i> </button>
           </div>
         </div>
       </div>
     );
-  };
+};
