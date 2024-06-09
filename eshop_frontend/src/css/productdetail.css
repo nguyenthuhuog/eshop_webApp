@@ -1,0 +1,41 @@
+/* productdetail.css */
+
+.product-detail-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff; /* Set background color for the detail container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    flex: 0 0 40%; /* Set the width of the product image */
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 0 0 60%; /* Set the width of the product information */
+    padding-left: 20px; /* Add spacing between image and info */
+}
+
+.product-info h2 {
+    font-size: 24px; /* Increase font size for product name */
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 16px; /* Set font size for other product details */
+    margin-bottom: 10px;
+    line-height: 1.5; /* Improve line height for readability */
+}
+
+.product-info .product-price {
+    color: #e60023; /* Customize color for price */
+    font-weight: bold; /* Make price bold */
+}

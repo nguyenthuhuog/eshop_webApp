@@ -13,6 +13,7 @@ import MousePage from './MousePage';
 import KeyboardPage from './KeyboardPage';
 import ComputerPage from './ComputerPage';
 import HomePage from './HomePage';
+import ProductDetail from './ProductDetail';
 
 import '../css/homepage.css';
 import '../css/App.css';
@@ -48,6 +49,7 @@ function App() {
             <Route path="/computer" element={<ComputerPage />} />
             <Route path="/keyboard" element={<KeyboardPage />} />
             <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
+            <Route path="/product/:id" component={ProductDetail} />
           </Routes>
         </div>
         <Footer />
