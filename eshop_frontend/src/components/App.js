@@ -13,6 +13,7 @@ import MousePage from './MousePage';
 import KeyboardPage from './KeyboardPage';
 import ComputerPage from './ComputerPage';
 import HomePage from './HomePage';
+import ProductDetail from './ProductDetail';
 
 import ProductGrid from './ProductGrid'; // Import ProductGrid
 import {ShopContextProvider} from './ShopContextProvider';
@@ -56,7 +57,8 @@ function App() {
                   <Route path="/keyboard" element={<KeyboardPage />} />
                   <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
                   <Route path="/products" element={<ProductGrid />} /> 
-                  <Route path="/cart" element={<Cart />} />               
+                  <Route path="/cart" element={<Cart />} />            
+                  <Route path="/product/:id" element={<ProductDetail />} />   
                 </Routes>
               </div>
               <Footer />

@@ -35,6 +35,10 @@ const ProductGrid = ({ categoryName }) => {
         console.error('Error fetching products:', error);
     }
   };
+  
+  const handleProductClick = (productId) => {
+    navigate(`/product/${productId}`);
+  };
 
   useEffect(() => {
     console.log("Start fetching");
@@ -46,7 +50,7 @@ const ProductGrid = ({ categoryName }) => {
     <div className="main">
       <div className="product-grid">
         {products.map((product) => (
-          <div className="product" key={product.productID}>
+          <div className="product" key={product.productID} onClick={() => handleProductClick(product.productID)}>
             <h3>{product.productName}</h3>
             {/* Assuming product.images is an array */}
             {/* {product.images.map((image, index) => (
