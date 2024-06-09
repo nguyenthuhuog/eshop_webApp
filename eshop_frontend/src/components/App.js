@@ -6,6 +6,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 import MousePage from './MousePage';
@@ -26,21 +27,32 @@ function App() {
   const openRegisterModal = () => setIsRegisterModalOpen(true);
   const closeRegisterModal = () => setIsRegisterModalOpen(false);
 
+  const [isSidebarActive, setIsSidebarActive] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarActive(!isSidebarActive);
+  };
+
   return (
     <Router>
       <div className="App">
         <Header openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
-        <Navbar />
+        <div className={`wrapper ${isSidebarActive ? 'active' : ''}`}>
+        <Navbar toggleSidebar={toggleSidebar}/>
         <div className="main_container">
+          <Sidebar />
+          <div className="content">
           <Routes>
             <Route path="/contact" element={<Contact />} />
             <Route path="/mouse" element={<MousePage />} />
             <Route path="/computer" element={<ComputerPage />} />
             <Route path="/keyboard" element={<KeyboardPage />} />
-            <Route path="/homepage" element={<HomePage />} />
+            <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
           </Routes>
         </div>
         <Footer />
+        </div>
+        </div>
         <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
         <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
       </div>

@@ -5,13 +5,15 @@ import ProductGrid from './ProductGrid';
 import News from './News';
 import '../css/homepage.css';
 
-const HomePage = () => {
+const HomePage = ({ isSidebarActive }) => {
   return (
-    <div className="container">
+    <div className="main_container">
+      <div className="container">
         <Banner />
         <SaleNews />
         <ProductGrid />
         <News />
+      </div>
     </div>
   );
 };

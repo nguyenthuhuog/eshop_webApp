@@ -1,11 +1,10 @@
-// Sidebar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/homepage.css';
 
-const Sidebar = ({ isActive }) => {
+const Sidebar = () => {
     return (
-        <div className={`sidebar ${isActive ? 'active' : ''}`}>
+        <div className="sidebar">
             <div className="sidebar__inner">
                 <ul>
                     <li>
