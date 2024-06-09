@@ -18,11 +18,6 @@ const KeyboardPage = () => {
                     The keyboard includes a series of pressing keys, alphanumeric keys, special characters and function keys to perform tasks.
                 </p>
             </div>
-            <div className="product-grid">
-            {PRODUCTS.map((product) => (
-              <Product data ={product} />
-            ))}
-          </div>
             <ProductGrid categoryName = "keyboard"/>
         </div>
     </div>    

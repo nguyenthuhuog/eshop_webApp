@@ -18,11 +18,6 @@ const MousePage = () => {
                     Regular mice are compactly designed, have two, three or more buttons with a scroll wheel placed between the two buttons.
                 </p>
             </div>
-            <div className="product-grid">
-            {PRODUCTS.map((product) => (
-              <Product data ={product} />
-            ))}
-          </div>
             <ProductGrid categoryName = "mouse"/>
 
         </div>

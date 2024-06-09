@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ProductGrid from './ProductGrid';
 import { PRODUCTS } from './products'; // Import the PRODUCTS array
 import { Product } from './Product';
 import '../css/homepage.css';
@@ -26,11 +27,7 @@ const ComputerPage = () =>{
           </p>
         </div>
 
-        <div className="product-grid">
-          {PRODUCTS.map((product) => (
-            <Product data ={product} />
-          ))}
-        </div>
+        <ProductGrid categoryName = "laptop"/>
       </div>
     </div>
   );
