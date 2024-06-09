@@ -1,20 +1,17 @@
 import React from 'react';
-import './Header.css';
+import './App.css';
 
-const Header = () => {
+const Header = ({ openLoginModal, openRegisterModal }) => {
   return (
     <div id="header">
       <div className="logo">
         <a href="index.html"> <img src="img/logo1.png" alt="Logo" /></a>
       </div>
-
       <div className="shop-name">H2T Computer Shop</div>
-
       <div className="search-bar">
         <input type="text" placeholder="Search for products..." />
         <i className="fas fa-search"></i>
       </div>
-
       <div className="auth-buttons">
         <div className="contact-info">
           <button onClick={() => window.location.href = 'tel:19001900'}>
@@ -42,8 +39,8 @@ const Header = () => {
           <button className="btn-cart" onClick={() => window.location.href = '#cart'}>
             <i className="fas fa-shopping-cart"></i>
           </button>
-          <button className="btn btn-login" onClick={() => openModal('loginModal')}>Login</button>
-          <button className="btn btn-register" onClick={() => openModal('registerModal')}>Register</button>
+          <button className="btn btn-login" onClick={openLoginModal}>Login</button>
+          <button className="btn btn-register" onClick={openRegisterModal}>Register</button>
         </div>
       </div>
     </div>
