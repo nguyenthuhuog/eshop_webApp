@@ -8,7 +8,7 @@ const Sidebar = () => {
             <div className="sidebar__inner">
                 <ul>
                     <li>
-                        <Link to="/computer" className="active">
+                        <Link to="/computer">
                             <span className="icon"><i className="fas fa-laptop"></i></span>
                             <span className="title">Computer & Laptop</span>
                         </Link>

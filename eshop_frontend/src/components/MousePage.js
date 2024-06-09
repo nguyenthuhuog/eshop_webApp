@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './homepage.css';
 
 const MousePage = () => {
@@ -22,22 +23,22 @@ const MousePage = () => {
                     <div className="sidebar__inner">
                         <ul>
                             <li>
-                                <a href="computer.html" >
+                                <Link to="/computer">
                                     <span className="icon"><i className=" fas fa-solid fa-laptop"></i></span>
                                     <span className="title">Computer & Laptop</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="keyboard.html">
+                                <Link to="/keyboard">
                                     <span className="icon"><i className="fas fa-solid fa-keyboard"></i></span>
                                     <span className="title">Keyboards</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="mouse.html" className="active">
+                                <Link to="/mouse" className="active">
                                     <span className="icon"><i className="fas fa-solid fa-computer-mouse"></i></span>
                                     <span className="title">Mouses</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

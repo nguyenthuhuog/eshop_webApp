@@ -36,7 +36,6 @@ function App() {
                         <Route path="/mouse" element={<MousePage />} />
                         <Route path="/computer" element={<ComputerPage />} />
                         <Route path="/keyboard" element={<KeyboardPage />} />
-                        <Route path="/" element={<ProductGrid />} />
                     </Routes>
                 </div>
                 <Footer />

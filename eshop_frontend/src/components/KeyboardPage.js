@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './homepage.css';
 
-const MousePage = () => {
+const KeyboardPage = () => {
     return (
         <div className="wrapper">
             <div className="top_navbar">
@@ -22,22 +23,22 @@ const MousePage = () => {
                     <div className="sidebar__inner">
                         <ul>
                             <li>
-                                <a href="computer.html">
+                                <Link to="/computer">
                                     <span className="icon"><i className=" fas fa-solid fa-laptop"></i></span>
                                     <span className="title">Computer & Laptop</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="keyboard.html" className="active">
+                                <Link to="/keyboard" className="active">
                                     <span className="icon"><i className="fas fa-solid fa-keyboard"></i></span>
                                     <span className="title">Keyboards</span>
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="mouse.html">
+                                <Link to="/mouse">
                                     <span className="icon"><i className="fas fa-solid fa-computer-mouse"></i></span>
                                     <span className="title">Mouses</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -107,4 +108,4 @@ const MousePage = () => {
     );
 };
 
-export default MousePage;
+export default KeyboardPage;
