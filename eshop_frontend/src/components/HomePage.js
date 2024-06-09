@@ -4,6 +4,8 @@ import SaleNews from './SaleNews';
 import ProductGrid from './ProductGrid';
 import News from './News';
 import '../css/homepage.css';
+import ChatComponent from './ChatComponent';
+
 
 const HomePage = ({ isSidebarActive }) => {
   return (
@@ -11,6 +13,7 @@ const HomePage = ({ isSidebarActive }) => {
       <div className="container">
         <Banner />
         <SaleNews /> 
+        <ChatComponent />
         <ProductGrid />
         <News />
       </div>

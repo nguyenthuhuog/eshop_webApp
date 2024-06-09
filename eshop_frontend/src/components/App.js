@@ -65,7 +65,6 @@ function App() {
               <Footer />
             </div>
           </div>
-          
           <LoginModal show={isLoginModalOpen} onClose={closeLoginModal} />
           <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
         </div>
