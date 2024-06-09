@@ -15,6 +15,10 @@ import ComputerPage from './ComputerPage';
 import HomePage from './HomePage';
 import ProductDetail from './ProductDetail';
 
+import ProductGrid from './ProductGrid'; // Import ProductGrid
+import { ShopProvider } from './ShopContext';
+import Shop from './Shop';
+
 import '../css/homepage.css';
 import '../css/App.css';
 
@@ -35,6 +39,7 @@ function App() {
   };
 
   return (
+    <ShopProvider>
     <Router>
       <div className="App">
         <Header openLoginModal={openLoginModal} openRegisterModal={openRegisterModal} />
@@ -49,7 +54,12 @@ function App() {
             <Route path="/computer" element={<ComputerPage />} />
             <Route path="/keyboard" element={<KeyboardPage />} />
             <Route path="/homepage" element={<HomePage isSidebarActive={isSidebarActive}/>} />
+<<<<<<< HEAD
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/products" element={<ProductGrid />} /> {/* Add route for ProductGrid */} 
+=======
             <Route path="/product/:id" element={<ProductDetail />} />
+>>>>>>> 999c1706d1e7859b1b5fef411239748f4f2bb130
           </Routes>
         </div>
         <Footer />
@@ -59,6 +69,7 @@ function App() {
         <RegisterModal show={isRegisterModalOpen} onClose={closeRegisterModal} />
       </div>
     </Router>
+    </ShopProvider>
   );
 }
 
