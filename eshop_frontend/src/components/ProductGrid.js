@@ -19,22 +19,22 @@ const ProductGrid = () => {
     console.log("Finish fetching")
   }, []);
   return (
-      <div className="main">
-        <div className="product-grid">
-          {products.map((product) => (
-            <div className="product" key={product.productID}>
-              <h3>{product.productID}</h3>
-              {/* {product.images.map((image, index) => (
-                <img src={image.url} alt={`Image of ${product.name}`} key={index} />
-              ))} */}
-              <p>Price: ${product.price.toFixed(2)}</p>
-              {/* <p>Description: {product.description}</p> */}
-              <p>Stock: {product.stock}</p>
-            </div>
-          ))}
-        </div>
+    <div className="main">
+      <div className="product-grid">
+        {products.map((product) => (
+          <div className="product" key={product.productID}>
+            <h3>{product.productName}</h3>
+            {/* {product.images.map((image, index) => (
+              <img src={image.url} alt={`Image of ${product.name}`} key={index} />
+            ))} */}
+            <p>Price: ${product.price.toFixed(2)}</p>
+            <p>Description: {product.description}</p>
+            <p>Stock: {product.stock}</p>
+          </div>
+        ))}
       </div>
-  );
+    </div>
+);
 }
 
 export default ProductGrid;
