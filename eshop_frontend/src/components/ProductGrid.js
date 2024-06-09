@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../css/homepage.css';
 
 const ProductGrid = ({ categoryName }) => {
   var api = 'http://localhost:8080/api/products';
   var imageApiBase = 'http://localhost:8080/api/images';
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
+
   const fetchProducts = async () => {
     try {
         if (categoryName != null) api = api + '/byCategory/' + categoryName;
@@ -29,13 +32,16 @@ const ProductGrid = ({ categoryName }) => {
       } catch (error) {
         console.error('Error fetching products:', error);
     }
-};
+  };
 
   useEffect(() => {
-    console.log("Start fetching");
     fetchProducts();
-    console.log("Finish fetching")
   }, []);
+
+  const handleProductClick = (productId) => {
+    navigate(`/product/${productId}`);
+  };
+
   return (
     <div className="main">
       <div className="product-grid">
@@ -50,7 +56,7 @@ const ProductGrid = ({ categoryName }) => {
         ))}
       </div>
     </div>
-);
-}
+  );
+};
 
 export default ProductGrid;

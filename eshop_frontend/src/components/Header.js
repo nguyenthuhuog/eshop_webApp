@@ -48,9 +48,12 @@ const Header = ({ openLoginModal, openRegisterModal }) => {
                         <span>Tech news</span>
                     </button>
 
-                    <button className="btn-cart" onClick={() => window.location.href = '#cart'}>
-                        <i className="fas fa-shopping-cart"></i>
-                    </button>
+                    <Link to ="/cart">
+                        <button className="btn-cart" onClick={() => window.location.href = '#cart'}>
+                            <i className="fas fa-shopping-cart"></i>
+                            {/* <ShoppingCart size={32} /> */}
+                        </button>
+                    </Link>
                     
                     <button className="btn btn-login" onClick={openLoginModal}>Login</button>
                     <button className="btn btn-register" onClick={openRegisterModal}>Register</button>
