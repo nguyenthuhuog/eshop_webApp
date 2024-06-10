@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { ShopContext } from './ShopContextProvider';
+import { useNavigate } from 'react-router-dom';
 import '../css/cart.css';
 
 const Cart = () => {
-  const { cartItems, products, removeFromCart, updateCartItemCount, addToCart, getTotalCartAmount } = useContext(ShopContext);
+  const { cartItems, products, removeFromCart, updateCartItemCount, addToCart, getTotalCartAmount, checkout } = useContext(ShopContext);
   const [productImages, setProductImages] = useState({});
   const imageApiBase = 'http://localhost:8080/api/images';
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProductImages = async () => {
@@ -25,6 +27,11 @@ const Cart = () => {
     };
     fetchProductImages();
   }, [cartItems]);
+
+  const handleCheckout = () => {
+    checkout();
+    navigate('/checkout');
+  };
 
   const totalAmount = getTotalCartAmount();
 
@@ -55,8 +62,12 @@ const Cart = () => {
         return null;
       })}
       {totalAmount > 0 ? (
-        <div className="totalAmount">
-          <h2>Total Amount: ${totalAmount.toFixed(2)}</h2>
+        <div className="checkout">
+          <div className="totalAmount">
+            <h2>Total Amount: ${totalAmount.toFixed(2)}</h2>
+          </div>
+          <button onClick={handleCheckout}>Checkout</button>
+          <button onClick={() => navigate('/Homepage')}>Continue Shopping</button>
         </div>
       ) : (
         <p>Your cart is empty</p>
