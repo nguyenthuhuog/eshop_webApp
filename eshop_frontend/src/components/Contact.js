@@ -37,7 +37,7 @@ const Contact = () => {
 
     return (
         <div className="container">
-            <h1 style={{ paddingTop: '20px' }}>Contact Us</h1>
+            <h1 style={{ paddingTop: '60px' }}>Contact Us</h1>
             <div className="contact-form-footer">
                 <h2>Get in Touch</h2>
                 <form onSubmit={handleSubmit}>
