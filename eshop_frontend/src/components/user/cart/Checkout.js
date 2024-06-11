@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import qrcode from '../img/qrcode.png';
-import '../css/homepage.css';
+import qrcode from '../../../img/qrcode.png';
+import '../../../css/homepage.css';
 
 const Checkout = () => {
     return (

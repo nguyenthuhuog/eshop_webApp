@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import '../css/productdetail.css';
+import '../../css/productdetail.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const ProductDetail = () => {

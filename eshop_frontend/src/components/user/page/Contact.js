@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../css/contact.css';
-import '../css/homepage.css';
+import '../../../css/contact.css';
+import '../../../css/homepage.css';
 
 const Contact = () => {
     var api = 'http://localhost:8080/api/messages';

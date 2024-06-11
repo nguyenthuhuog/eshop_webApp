@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFire, FaTruck, FaStar } from 'react-icons/fa';
-import '../css/homepage.css';
+import '../../../css/homepage.css';
 
 const SaleNews = () => {
   return (

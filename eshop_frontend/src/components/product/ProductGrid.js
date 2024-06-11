@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { ShopContext } from './ShopContextProvider'; 
 import { useNavigate } from 'react-router-dom';
-import '../css/homepage.css';
+import '../../css/homepage.css';
 
 const ProductGrid = ({ categoryName }) => {
   let api = 'http://localhost:8080/api/products';

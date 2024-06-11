@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from './Banner';
+import Banner from '../../Banner';
 import SaleNews from './SaleNews';
-import ProductGrid from './ProductGrid';
+import ProductGrid from '../../product/ProductGrid';
 import News from './News';
-import '../css/homepage.css';
+import '../../../css/homepage.css';
 import ChatComponent from './ChatComponent';
 
 

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ProductGrid from './ProductGrid';
-import { PRODUCTS } from './products'; // Import the PRODUCTS array
-import { Product } from './Product';
-import '../css/homepage.css';
-import '../css/product.css';
+import ProductGrid from '../../product/ProductGrid';
+// import { PRODUCTS } from '../../products'; // Import the PRODUCTS array
+// import { Product } from '../../product/Product';
+import '../../../css/homepage.css';
+import '../../../css/product.css';
 
 // const ComputerPage = (props) => {
 //   const [cartItems, setCartItems] = useState({});

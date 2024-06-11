@@ -2,23 +2,25 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Contact from './Contact';
 import Footer from './Footer';
 import Header from './Header';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
-import MousePage from './MousePage';
-import KeyboardPage from './KeyboardPage';
-import ComputerPage from './ComputerPage';
-import HomePage from './HomePage';
-import ProductDetail from './ProductDetail';
-import ProductGrid from './ProductGrid'; // Import ProductGrid
-import {ShopContextProvider} from './ShopContextProvider';
+
+import Contact from './user/page/Contact';
+import MousePage from './user/page/MousePage';
+import KeyboardPage from './user/page/KeyboardPage';
+import ComputerPage from './user/page/ComputerPage';
+import HomePage from './user/homepage/HomePage';
+
+import ProductDetail from './product/ProductDetail';
+import ProductGrid from './product/ProductGrid'; 
+import {ShopContextProvider} from './product/ShopContextProvider';
 // import Shop from './Shop';
-import Cart from './Cart'; 
-import Checkout from './Checkout';
+import Cart from './user/cart/Cart'; 
+import Checkout from './user/cart/Checkout';
 
 
 import '../css/homepage.css';

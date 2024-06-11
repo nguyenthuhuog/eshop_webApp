@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { ShopContext } from './ShopContextProvider';
+import { ShopContext } from '../../product/ShopContextProvider';
 import { useNavigate } from 'react-router-dom';
-import '../css/cart.css';
+import '../../../css/cart.css';
 
 const Cart = () => {
   const { cartItems, products, removeFromCart, updateCartItemCount, addToCart, getTotalCartAmount, checkout } = useContext(ShopContext);
